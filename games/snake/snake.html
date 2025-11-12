@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Snake - Juega Gratis Online | FreeUniArcade</title>
+    <meta name="description" content="Juega al clásico juego Snake gratis online. Come la comida y crece sin chocar. Sin registro, sin pagos. Todo el arte y código originales.">
+    <meta name="keywords" content="snake, juego snake, serpiente, juego gratis, arcade, retro">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://freeuniarcade.com/games/snake/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="game">
+    <meta property="og:url" content="https://freeuniarcade.com/games/snake/">
+    <meta property="og:title" content="Snake - Juega Gratis Online | FreeUniArcade">
+    <meta property="og:description" content="Juega al clásico juego Snake gratis online. Sin registro, sin pagos.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://freeuniarcade.com/games/snake/">
+    <meta property="twitter:title" content="Snake - Juega Gratis Online | FreeUniArcade">
+    <meta property="twitter:description" content="Juega al clásico juego Snake gratis online. Sin registro, sin pagos.">
+    
+    <!-- Schema.org VideoGame JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Snake",
+      "description": "El clásico juego de la serpiente. Come la comida y crece sin chocar.",
+      "gamePlatform": "Web Browser",
+      "applicationCategory": "Game",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "ratingCount": "1"
+      },
+      "genre": "Arcade",
+      "playMode": "SinglePlayer",
+      "gameLocation": "https://freeuniarcade.com/games/snake/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "FreeUniTools"
+      },
+      "datePublished": "2024-01-01",
+      "inLanguage": ["es", "en"]
+    }
+    </script>
+    
+    <!-- Analytics Placeholder (gtag/GTM) -->
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+    <!-- <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
+    
+    <!-- Google Tag Manager -->
+    <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+    
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../styles/game.css">
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body class="dark-theme">
+    <!-- Google Tag Manager (noscript) -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+    
+    <!-- Ad Slot Top (Placeholder for AdSense) -->
+    <div id="ad-slot-top" style="display: none;"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="../../" class="logo">FreeUniArcade</a>
+            </div>
+            <div class="nav-center">
+                <a href="../../#classics" class="nav-link">Classics</a>
+                <a href="../../#retro" class="nav-link">Retro</a>
+                <a href="../../#puzzle" class="nav-link">Puzzle</a>
+            </div>
+            <div class="nav-right">
+                <button class="lang-selector" id="langSelector">
+                    <span class="icon">🌐</span>
+                    <span class="lang-text">ES</span>
+                </button>
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="icon">🌙</span>
+                    <span class="theme-text">Dark</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Game Header -->
+    <header class="game-header">
+        <h1 class="game-title">Snake</h1>
+        <div class="game-score">
+            <span>Puntuación: <span id="score">0</span></span>
+            <span class="game-high-score">Récord: <span id="highScore">0</span></span>
+        </div>
+    </header>
+    
+    <!-- Game Container -->
+    <main class="game-container">
+        <!-- Ad Slot Left -->
+        <div id="ad-slot-left" class="ad-slot ad-slot-side"></div>
+        
+        <!-- Game Content with Controls -->
+        <div class="game-main-section">
+            <!-- Game Content -->
+            <div class="game-content">
+                <div class="game-wrapper">
+                    <canvas id="gameCanvas" width="620" height="620" aria-label="Juego Snake"></canvas>
+                    <div id="gameOver" class="game-over hidden">
+                        <h2>¡Game Over!</h2>
+                        <p>Puntuación: <span id="finalScore">0</span></p>
+                        <button id="restartBtn" class="restart-button">Jugar de Nuevo</button>
+                    </div>
+                    <div id="gamePaused" class="game-paused hidden">
+                        <h2>Pausado</h2>
+                        <button id="resumeBtn" class="resume-button">Continuar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Controls Sidebar -->
+            <div class="game-controls-sidebar">
+                <!-- Game Instructions -->
+                <div class="game-instructions">
+                    <h3>Controles</h3>
+                    <p><strong>Desktop:</strong> Usa las flechas del teclado o WASD</p>
+                    <p><strong>Móvil:</strong> Usa el D-pad o desliza el dedo</p>
+                    <p><strong>Pausar:</strong> Presiona Espacio o P</p>
+                </div>
+                
+                <!-- Touch Controls (Mobile only) -->
+                <div class="touch-controls" id="touchControls">
+                    <div class="d-pad">
+                        <button class="d-pad-btn d-pad-up" aria-label="Arriba" data-direction="up">↑</button>
+                        <div class="d-pad-middle">
+                            <button class="d-pad-btn d-pad-left" aria-label="Izquierda" data-direction="left">←</button>
+                            <button class="d-pad-btn d-pad-right" aria-label="Derecha" data-direction="right">→</button>
+                        </div>
+                        <button class="d-pad-btn d-pad-down" aria-label="Abajo" data-direction="down">↓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ad Slot Right -->
+        <div id="ad-slot-right" class="ad-slot ad-slot-side"></div>
+    </main>
+    
+    <!-- Ad Slot Bottom (Placeholder for AdSense) -->
+    <div id="ad-slot-bottom" style="display: none;"></div>
+    
+    <!-- Load scripts -->
+    <script src="../../scripts/storage.js"></script>
+    <script src="../../scripts/i18n.js"></script>
+    <script src="../../script.js"></script>
+    <script src="snake.js" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,250 @@
+// Theme Toggle Functionality
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+if (themeToggle) {
+    // Check for saved theme preference or default to dark
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    body.classList.add(`${currentTheme}-theme`);
+
+    // Update theme toggle button text and icon
+    function updateThemeButton(theme) {
+        const icon = themeToggle.querySelector('.icon');
+        const text = themeToggle.querySelector('.theme-text');
+        
+        if (icon && text) {
+            if (theme === 'dark') {
+                icon.textContent = '🌙';
+                text.textContent = 'Dark';
+            } else {
+                icon.textContent = '☀️';
+                text.textContent = 'Light';
+            }
+        }
+    }
+
+    updateThemeButton(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const isDark = body.classList.contains('dark-theme');
+        
+        if (isDark) {
+            body.classList.remove('dark-theme');
+            body.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
+            updateThemeButton('light');
+        } else {
+            body.classList.remove('light-theme');
+            body.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+            updateThemeButton('dark');
+        }
+    });
+} else {
+    // If no theme toggle, still apply saved theme
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    body.classList.add(`${currentTheme}-theme`);
+}
+
+// Language Toggle Functionality
+const langSelector = document.getElementById('langSelector');
+
+/**
+ * Actualiza todos los elementos de la página con las traducciones del idioma actual
+ * @param {string} lang - Código del idioma (es, en)
+ */
+async function updateLanguage(lang) {
+    // Asegurar que i18n está inicializado
+    if (!i18n.isLoaded()) {
+        await i18n.init(lang);
+    } else {
+        await i18n.setLanguage(lang);
+    }
+    
+    const t = (key) => i18n.t(key);
+    
+    if (langSelector) {
+        const langText = langSelector.querySelector('.lang-text');
+        if (langText) {
+            langText.textContent = lang.toUpperCase();
+        }
+    }
+    
+    // Update page content (only if elements exist)
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle && heroTitle.closest('.hero')) {
+        heroTitle.textContent = t('heroTitle');
+    }
+    
+    const heroDescription = document.querySelector('.hero-description');
+    if (heroDescription) {
+        heroDescription.textContent = t('heroDescription');
+    }
+    
+    // Update nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach((link, index) => {
+        if (index === 0) link.textContent = t('classics');
+        else if (index === 1) link.textContent = t('retro');
+        else if (index === 2) link.textContent = t('puzzle');
+        else if (link.classList.contains('nav-donate')) link.textContent = t('donate');
+    });
+    
+    // Update section titles
+    const sectionTitles = document.querySelectorAll('.section-title');
+    if (sectionTitles.length >= 4) {
+        sectionTitles[0].textContent = t('popularGames');
+        sectionTitles[1].textContent = t('classics');
+        sectionTitles[2].textContent = t('retro');
+        sectionTitles[3].textContent = t('puzzle');
+        // Update donate section title if it exists
+        const donateTitle = document.querySelector('#donate .section-title');
+        if (donateTitle) donateTitle.textContent = t('donateTitle');
+    }
+    
+    // Update empty states
+    const emptyMessages = document.querySelectorAll('.empty-message');
+    if (emptyMessages.length >= 3) {
+        emptyMessages[0].textContent = t('comingSoonClassics');
+        emptyMessages[1].textContent = t('comingSoonRetro');
+        emptyMessages[2].textContent = t('comingSoonPuzzle');
+    }
+    
+    // Update game cards
+    const gameCards = document.querySelectorAll('.game-card');
+    const gameKeys = ['snake', 'tetris', 'sudoku'];
+    
+    gameCards.forEach((card, index) => {
+        if (index < gameKeys.length) {
+            const gameKey = gameKeys[index];
+            const titleEl = card.querySelector('.game-title');
+            const descEl = card.querySelector('.game-description');
+            const playBtn = card.querySelector('.play-button');
+            
+            if (titleEl) titleEl.textContent = t(`${gameKey}.title`);
+            if (descEl) descEl.textContent = t(`${gameKey}.description`);
+            if (playBtn) playBtn.textContent = t('play');
+            
+            const tags = card.querySelectorAll('.tag');
+            if (tags.length >= 2) {
+                tags[0].textContent = t('offline');
+                tags[1].textContent = t('noRegister');
+            }
+        }
+    });
+    
+    // Update footer
+    const footerText = document.querySelector('.footer-left p');
+    if (footerText) {
+        footerText.innerHTML = `${t('madeBy')} <span class="footer-brand">FreeUniTools</span>`;
+    }
+    
+    const donateButton = document.querySelector('.donate-button');
+    if (donateButton) {
+        donateButton.textContent = t('donate');
+    }
+    
+    // Update donate section
+    const donateDescription = document.querySelector('.donate-description');
+    if (donateDescription) {
+        donateDescription.textContent = t('donateDescription');
+    }
+    
+    const donateWithPayPal = document.querySelector('.donate-paypal-button span[data-i18n="donateWithPayPal"]') || 
+                              document.querySelector('.donate-paypal-button span:not(.paypal-icon)');
+    if (donateWithPayPal) {
+        donateWithPayPal.textContent = t('donateWithPayPal');
+    }
+    
+    const donateNote = document.querySelector('.donate-note');
+    if (donateNote) {
+        donateNote.textContent = t('donateNote');
+    }
+    
+    // Update snake game page elements
+    const gameScoreLabel = document.querySelector('.game-score span');
+    if (gameScoreLabel && (gameScoreLabel.textContent.includes('Puntuación') || gameScoreLabel.textContent.includes('Score'))) {
+        const scoreValue = document.getElementById('score')?.textContent || '0';
+        gameScoreLabel.innerHTML = `${t('snake.score')} <span id="score">${scoreValue}</span>`;
+    }
+    
+    const gameOverTitle = document.querySelector('#gameOver h2');
+    if (gameOverTitle) {
+        gameOverTitle.textContent = t('snake.gameOver');
+    }
+    
+    const pausedTitle = document.querySelector('#gamePaused h2');
+    if (pausedTitle) {
+        pausedTitle.textContent = t('snake.paused');
+    }
+    
+    const restartBtn = document.getElementById('restartBtn');
+    if (restartBtn) {
+        restartBtn.textContent = t('snake.playAgain');
+    }
+    
+    const resumeBtn = document.getElementById('resumeBtn');
+    if (resumeBtn) {
+        resumeBtn.textContent = t('snake.resume');
+    }
+    
+    const instructionsTitle = document.querySelector('.game-instructions h3');
+    if (instructionsTitle) {
+        instructionsTitle.textContent = t('snake.controls');
+    }
+    
+    const instructions = document.querySelectorAll('.game-instructions p');
+    if (instructions.length >= 3) {
+        instructions[0].innerHTML = `<strong>${t('snake.desktopControls')}</strong>`;
+        instructions[1].innerHTML = `<strong>${t('snake.mobileControls')}</strong>`;
+        instructions[2].innerHTML = `<strong>${t('snake.pauseControls')}</strong>`;
+    }
+}
+
+// Initialize language when DOM is ready
+async function initLanguage() {
+    const currentLang = i18n.getCurrentLanguage();
+    
+    // Inicializar i18n
+    await i18n.init(currentLang);
+    
+    // Aplicar traducciones
+    await updateLanguage(currentLang);
+    
+    // Configurar el selector de idioma
+    if (langSelector) {
+        langSelector.addEventListener('click', async () => {
+            const currentLang = i18n.getCurrentLanguage();
+            const newLang = currentLang === 'es' ? 'en' : 'es';
+            await updateLanguage(newLang);
+        });
+    }
+}
+
+// Inicializar cuando el DOM esté listo
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLanguage);
+} else {
+    initLanguage();
+}
+
+// Play button functionality (only on index page)
+const playButtons = document.querySelectorAll('.play-button');
+if (playButtons.length > 0) {
+    playButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const gameTitles = ['snake', 'tetris', 'sudoku'];
+            const gameTitle = gameTitles[index];
+            if (gameTitle === 'snake') {
+                window.location.href = '/games/snake/';
+            } else {
+                console.log(`Playing ${gameTitle}`);
+                const comingSoonMsg = i18n.isLoaded() 
+                    ? `${i18n.t('comingSoon')} ${gameTitle}` 
+                    : `Próximamente: ${gameTitle}`;
+                alert(comingSoonMsg);
+            }
+        });
+    });
+}
+

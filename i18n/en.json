@@ -1,0 +1,43 @@
+{
+  "heroTitle": "Free Uni Arcade",
+  "heroDescription": "FreeUniArcade was born with one goal: to make classic and retro games accessible to everyone. No sign-ups. No payments. Just fun and nostalgia.",
+  "popularGames": "Popular Games",
+  "classics": "Classics",
+  "retro": "Retro",
+  "puzzle": "Puzzle",
+  "snake": {
+    "title": "Snake",
+    "description": "The classic snake game. Eat food and grow without crashing.",
+    "score": "Score:",
+    "gameOver": "Game Over!",
+    "paused": "Paused",
+    "playAgain": "Play Again",
+    "resume": "Resume",
+    "controls": "Controls",
+    "desktopControls": "Desktop: Use arrow keys or WASD",
+    "mobileControls": "Mobile: Use the D-pad or swipe",
+    "pauseControls": "Pause: Press Space or P"
+  },
+  "tetris": {
+    "title": "Tetris",
+    "description": "Align the pieces and complete lines to score points."
+  },
+  "sudoku": {
+    "title": "Sudoku",
+    "description": "Complete the grid with numbers from 1 to 9 without repeating."
+  },
+  "play": "Play",
+  "offline": "OFFLINE",
+  "noRegister": "NO REGISTRATION",
+  "madeBy": "Made by",
+  "donate": "Donate",
+  "donateTitle": "Donate with PayPal",
+  "donateDescription": "If you enjoy FreeUniArcade and want to support the project, you can make a donation through PayPal. Your contribution helps keep the site running and add new games.",
+  "donateWithPayPal": "Donate with PayPal",
+  "donateNote": "Donations are completely optional. FreeUniArcade will remain free for everyone.",
+  "comingSoon": "Coming soon: games",
+  "comingSoonClassics": "Coming soon: classic games",
+  "comingSoonRetro": "Coming soon: retro games",
+  "comingSoonPuzzle": "Coming soon: puzzle games"
+}
+

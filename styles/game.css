@@ -1,0 +1,128 @@
+/* Base Game Styles - Mobile First */
+/* All code and art are original */
+
+:root {
+    /* Game Colors - Dark Theme - Using site's color scheme */
+    --bg-color: var(--bg-primary, #000000);
+    --grid-color: var(--bg-secondary, #000000);
+    --snake-color: #22c55e;
+    --snake-head-color: #4ade80;
+    --food-color: #ff4444;
+    --text-color: var(--text-primary, #ffffff);
+    --text-secondary: var(--text-secondary, #b8b8b8);
+    --border-color: var(--border-color, #333333);
+    --header-bg: var(--bg-secondary, #000000);
+    --card-bg: var(--bg-card, #1a1a1a);
+    --button-bg: var(--bg-card, #1a1a1a);
+    --button-hover: var(--bg-secondary, #000000);
+    --accent-color: #14b8a6;
+    --accent-hover: #06b6d4;
+    --modal-bg: rgba(0, 0, 0, 0.95);
+    --hover-bg: var(--bg-card, #1a1a1a);
+}
+
+body.light-theme {
+    --bg-color: var(--bg-primary, #f5f5f7);
+    --grid-color: var(--bg-secondary, #ffffff);
+    --snake-color: #16a34a;
+    --snake-head-color: #22c55e;
+    --food-color: #dc2626;
+    --text-color: var(--text-primary, #1d1d1f);
+    --text-secondary: var(--text-secondary, #6e6e73);
+    --border-color: var(--border-color, #d2d2d7);
+    --header-bg: var(--bg-secondary, #ffffff);
+    --card-bg: var(--bg-card, #ffffff);
+    --button-bg: var(--bg-card, #ffffff);
+    --button-hover: var(--bg-secondary, #ffffff);
+    --accent-color: #8b5cf6;
+    --accent-hover: #ec4899;
+    --modal-bg: rgba(245, 245, 247, 0.95);
+    --hover-bg: var(--bg-card, #ffffff);
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --bg-color: #000000;
+        --grid-color: #333333;
+        --snake-color: #00ff00;
+        --snake-head-color: #00ff00;
+        --food-color: #ff0000;
+        --text-color: #ffffff;
+        --border-color: #ffffff;
+    }
+    
+    body.light-theme {
+        --bg-color: #ffffff;
+        --grid-color: #cccccc;
+        --snake-color: #000000;
+        --snake-head-color: #000000;
+        --food-color: #ff0000;
+        --text-color: #000000;
+        --border-color: #000000;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Base Game Layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-primary, var(--bg-color, #0a0a0f));
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* Focus Styles for Accessibility */
+*:focus-visible {
+    outline: 3px solid var(--accent-color, #414aaf);
+    outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--accent-color, #414aaf);
+    outline-offset: 2px;
+}
+
+/* Skip to main content link for screen readers */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-color, #414aaf);
+    color: var(--bg-color, #1a1a1a);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 769px) {
+    html {
+        font-size: 16px;
+    }
+}
+

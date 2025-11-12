@@ -1,0 +1,43 @@
+{
+  "heroTitle": "Free Uni Arcade",
+  "heroDescription": "FreeUniArcade nació con un objetivo: hacer que los juegos clásicos y retro sean accesibles para todos. Sin registros. Sin pagos. Solo diversión y nostalgia.",
+  "popularGames": "Juegos Populares",
+  "classics": "Classics",
+  "retro": "Retro",
+  "puzzle": "Puzzle",
+  "snake": {
+    "title": "Snake",
+    "description": "El clásico juego de la serpiente. Come la comida y crece sin chocar.",
+    "score": "Puntuación:",
+    "gameOver": "¡Game Over!",
+    "paused": "Pausado",
+    "playAgain": "Jugar de Nuevo",
+    "resume": "Continuar",
+    "controls": "Controles",
+    "desktopControls": "Desktop: Usa las flechas del teclado o WASD",
+    "mobileControls": "Móvil: Usa el D-pad o desliza el dedo",
+    "pauseControls": "Pausar: Presiona Espacio o P"
+  },
+  "tetris": {
+    "title": "Tetris",
+    "description": "Alinea las piezas y completa líneas para ganar puntos."
+  },
+  "sudoku": {
+    "title": "Sudoku",
+    "description": "Completa la cuadrícula con números del 1 al 9 sin repetir."
+  },
+  "play": "Jugar",
+  "offline": "OFFLINE",
+  "noRegister": "SIN REGISTRO",
+  "madeBy": "Hecho por",
+  "donate": "Donar",
+  "donateTitle": "Donar con PayPal",
+  "donateDescription": "Si disfrutas de FreeUniArcade y quieres apoyar el proyecto, puedes hacer una donación a través de PayPal. Tu contribución ayuda a mantener el sitio funcionando y a agregar nuevos juegos.",
+  "donateWithPayPal": "Donar con PayPal",
+  "donateNote": "Las donaciones son completamente opcionales. FreeUniArcade seguirá siendo gratuito para todos.",
+  "comingSoon": "Próximamente: juegos",
+  "comingSoonClassics": "Próximamente: juegos clásicos",
+  "comingSoonRetro": "Próximamente: juegos retro",
+  "comingSoonPuzzle": "Próximamente: juegos de puzzle"
+}
+
