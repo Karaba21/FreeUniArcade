@@ -112,7 +112,7 @@ async function updateLanguage(lang) {
     
     // Update game cards
     const gameCards = document.querySelectorAll('.game-card');
-    const gameKeys = ['snake', 'tetris', 'sudoku'];
+    const gameKeys = ['snake', 'flappy', 'tetris', 'sudoku'];
     
     gameCards.forEach((card, index) => {
         if (index < gameKeys.length) {
@@ -233,10 +233,12 @@ const playButtons = document.querySelectorAll('.play-button');
 if (playButtons.length > 0) {
     playButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
-            const gameTitles = ['snake', 'tetris', 'sudoku'];
+            const gameTitles = ['snake', 'flappy', 'tetris', 'sudoku'];
             const gameTitle = gameTitles[index];
             if (gameTitle === 'snake') {
                 window.location.href = '/games/snake/';
+            } else if (gameTitle === 'flappy') {
+                window.location.href = '/games/flappy/';
             } else {
                 console.log(`Playing ${gameTitle}`);
                 const comingSoonMsg = i18n.isLoaded() 

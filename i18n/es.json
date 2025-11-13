@@ -18,6 +18,10 @@
     "mobileControls": "Móvil: Usa el D-pad o desliza el dedo",
     "pauseControls": "Pausar: Presiona Espacio o P"
   },
+  "flappy": {
+    "title": "Flappy Bird",
+    "description": "Vuela entre los tubos sin chocar. Presiona espacio o haz click para volar."
+  },
   "tetris": {
     "title": "Tetris",
     "description": "Alinea las piezas y completa líneas para ganar puntos."

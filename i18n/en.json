@@ -18,6 +18,10 @@
     "mobileControls": "Mobile: Use the D-pad or swipe",
     "pauseControls": "Pause: Press Space or P"
   },
+  "flappy": {
+    "title": "Flappy Bird",
+    "description": "Fly between the pipes without crashing. Press space or click to fly."
+  },
   "tetris": {
     "title": "Tetris",
     "description": "Align the pieces and complete lines to score points."
