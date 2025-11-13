@@ -161,6 +161,37 @@ async function updateLanguage(lang) {
         donateNote.textContent = t('donateNote');
     }
     
+    // Update promo section elements
+    const promoBadge = document.querySelector('.promo-badge');
+    if (promoBadge) {
+        promoBadge.textContent = t('promoBadge');
+    }
+    
+    const promoTitle = document.querySelector('.promo-title');
+    if (promoTitle) {
+        promoTitle.textContent = t('promoTitle');
+    }
+    
+    const promoSubtitle = document.querySelector('.promo-subtitle');
+    if (promoSubtitle) {
+        promoSubtitle.textContent = t('promoSubtitle');
+    }
+    
+    // Update promo features
+    const promoFeatures = document.querySelectorAll('.promo-feature span[data-i18n]');
+    promoFeatures.forEach((feature) => {
+        const key = feature.getAttribute('data-i18n');
+        if (key) {
+            feature.textContent = t(key);
+        }
+    });
+    
+    // Update promo button
+    const promoButton = document.querySelector('.promo-button span[data-i18n="promoButton"]');
+    if (promoButton) {
+        promoButton.textContent = t('promoButton');
+    }
+    
     // Update snake game page elements
     const gameScoreLabel = document.querySelector('.game-score span');
     if (gameScoreLabel && (gameScoreLabel.textContent.includes('Puntuación') || gameScoreLabel.textContent.includes('Score'))) {

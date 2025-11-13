@@ -118,7 +118,7 @@ body {
 
 .lang-selector,
 .theme-toggle {
-    background: linear-gradient(135deg, var(--accent-teal), var(--accent-cyan));
+    background: #292929;
     border: none;
     color: white;
     padding: 0.5rem 1rem;
@@ -133,7 +133,7 @@ body {
 
 .lang-selector:hover,
 .theme-toggle:hover {
-    background: linear-gradient(135deg, var(--accent-teal-dark), var(--accent-cyan));
+    background: linear-gradient(135deg, var(--accent-teal), var(--accent-cyan));
     box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
 }
 
@@ -299,6 +299,210 @@ body {
     font-style: italic;
 }
 
+/* Promo Section */
+.promo-section {
+    padding: 5rem 2rem;
+    width: 100%;
+    scroll-margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(6, 182, 212, 0.1));
+    z-index: 0;
+}
+
+.promo-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.promo-content {
+    background: linear-gradient(135deg, var(--bg-card), rgba(20, 184, 166, 0.05));
+    border-radius: 24px;
+    padding: 4rem 3rem;
+    border: 2px solid var(--accent-teal);
+    box-shadow: 0 20px 60px rgba(20, 184, 166, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+.promo-content:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 70px rgba(20, 184, 166, 0.4);
+    border-color: var(--accent-teal-light);
+}
+
+.promo-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-teal), var(--accent-cyan));
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(20, 184, 166, 0.4);
+    position: relative;
+    z-index: 2;
+}
+
+.promo-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent-teal-light), var(--accent-cyan-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+    line-height: 1.2;
+}
+
+.promo-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.promo-main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.promo-image-container {
+    flex: 0 0 auto;
+    max-width: 500px;
+    position: relative;
+}
+
+.promo-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: contain;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.promo-content:hover .promo-image {
+    transform: scale(1.05);
+}
+
+.promo-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    flex: 1;
+    max-width: 400px;
+}
+
+.promo-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(20, 184, 166, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(20, 184, 166, 0.3);
+    transition: all 0.3s ease;
+}
+
+.promo-feature:hover {
+    background-color: rgba(20, 184, 166, 0.2);
+    border-color: var(--accent-teal);
+    transform: translateX(5px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.promo-feature span:last-child {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.promo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, var(--accent-teal), var(--accent-cyan));
+    color: white;
+    padding: 1.2rem 3rem;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(20, 184, 166, 0.4);
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.promo-button:hover {
+    background: linear-gradient(135deg, var(--accent-teal-dark), var(--accent-cyan));
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 12px 35px rgba(20, 184, 166, 0.6);
+}
+
+.promo-arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.promo-button:hover .promo-arrow {
+    transform: translateX(8px);
+}
+
 /* Donate Section */
 .donate-section {
     padding: 4rem 2rem;
@@ -373,6 +577,57 @@ body.light-theme .donate-paypal-button {
 body.light-theme .donate-paypal-button:hover {
     background: linear-gradient(135deg, var(--accent-purple-dark), var(--accent-pink));
     box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+body.light-theme .promo-section::before {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+}
+
+body.light-theme .promo-content {
+    background: linear-gradient(135deg, var(--bg-card), rgba(139, 92, 246, 0.05));
+    border-color: var(--accent-purple);
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+}
+
+body.light-theme .promo-content::before {
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+}
+
+body.light-theme .promo-content:hover {
+    box-shadow: 0 25px 70px rgba(139, 92, 246, 0.4);
+    border-color: var(--accent-purple-light);
+}
+
+body.light-theme .promo-badge {
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+body.light-theme .promo-title {
+    background: linear-gradient(135deg, var(--accent-purple-light), var(--accent-pink-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-theme .promo-feature {
+    background-color: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+body.light-theme .promo-feature:hover {
+    background-color: rgba(139, 92, 246, 0.2);
+    border-color: var(--accent-purple);
+}
+
+body.light-theme .promo-button {
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+body.light-theme .promo-button:hover {
+    background: linear-gradient(135deg, var(--accent-purple-dark), var(--accent-pink));
+    box-shadow: 0 12px 35px rgba(139, 92, 246, 0.6);
 }
 
 /* Footer */
@@ -493,14 +748,15 @@ body.light-theme .donate-button:hover {
 
 body.light-theme .lang-selector,
 body.light-theme .theme-toggle {
-    background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
-    color: white;
+    background: #f0f0f0;
+    color: #1d1d1f;
     border: none;
 }
 
 body.light-theme .lang-selector:hover,
 body.light-theme .theme-toggle:hover {
-    background: linear-gradient(135deg, var(--accent-purple-dark), var(--accent-pink));
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+    color: white;
     box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
 
@@ -675,6 +931,44 @@ a:focus-visible {
 
     .game-card {
         padding: 1.5rem;
+    }
+
+    .promo-section {
+        padding: 3rem 1rem;
+    }
+
+    .promo-content {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .promo-title {
+        font-size: 1.8rem;
+    }
+
+    .promo-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .promo-main-content {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .promo-image-container {
+        max-width: 100%;
+    }
+
+    .promo-features {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .promo-button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
     }
 
     .donate-section {
