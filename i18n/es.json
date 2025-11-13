@@ -44,6 +44,10 @@
     "youWon": "¡Ganaste!",
     "youLost": "¡Game Over!"
   },
+  "minesweeper": {
+    "title": "Buscaminas",
+    "description": "Encuentra todas las minas sin explotar. Click izquierdo para revelar, click derecho para marcar."
+  },
   "tetris": {
     "title": "Tetris",
     "description": "Alinea las piezas y completa líneas para ganar puntos."

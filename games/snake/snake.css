@@ -423,6 +423,15 @@ body.light-theme .d-pad-btn:active {
     line-height: 1.5;
 }
 
+/* Light theme - black text for better readability */
+body.light-theme .game-instructions p {
+    color: #000000;
+}
+
+body.light-theme .game-instructions h3 {
+    color: #000000;
+}
+
 /* High Contrast Mode */
 @media (prefers-contrast: high) {
     #gameCanvas {

@@ -281,6 +281,8 @@ if (playButtons.length > 0) {
                 window.location.href = '/games/flappy/flappy.html';
             } else if (gameTitle === 'pong') {
                 window.location.href = '/games/pong/pong.html';
+            } else if (gameTitle === 'minesweeper') {
+                window.location.href = '/games/minesweeper/minesweeper.html';
             } else {
                 console.log(`Playing ${gameTitle}`);
                 const comingSoonMsg = i18n.isLoaded() 

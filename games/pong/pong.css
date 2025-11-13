@@ -169,6 +169,15 @@ body.light-theme .game-header::before {
     line-height: 1.5;
 }
 
+/* Light theme - black text for better readability */
+body.light-theme .game-instructions p {
+    color: #000000;
+}
+
+body.light-theme .game-instructions h3 {
+    color: #000000;
+}
+
 /* Game Start Screen */
 .game-start {
     position: absolute;

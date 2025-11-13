@@ -44,6 +44,10 @@
     "youWon": "You Won!",
     "youLost": "Game Over!"
   },
+  "minesweeper": {
+    "title": "Minesweeper",
+    "description": "Find all mines without exploding. Left click to reveal, right click to flag."
+  },
   "tetris": {
     "title": "Tetris",
     "description": "Align the pieces and complete lines to score points."
