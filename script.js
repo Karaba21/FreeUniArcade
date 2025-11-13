@@ -276,11 +276,11 @@ if (playButtons.length > 0) {
         button.addEventListener('click', () => {
             const gameTitle = button.getAttribute('data-game');
             if (gameTitle === 'snake') {
-                window.location.href = '/games/snake/';
+                window.location.href = '/games/snake/snake.html';
             } else if (gameTitle === 'flappy') {
-                window.location.href = '/games/flappy/';
+                window.location.href = '/games/flappy/flappy.html';
             } else if (gameTitle === 'pong') {
-                window.location.href = '/games/pong/';
+                window.location.href = '/games/pong/pong.html';
             } else {
                 console.log(`Playing ${gameTitle}`);
                 const comingSoonMsg = i18n.isLoaded() 
