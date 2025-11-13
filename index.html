@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>FreeUniArcade - Juegos Gratis Online | Snake, Tetris y Más</title>
-    <meta name="description" content="Juega gratis a juegos clásicos y retro online. Snake, Tetris, Sudoku y más. Sin registro, sin pagos. Todo el arte y código originales.">
-    <meta name="keywords" content="juegos gratis, juegos online, snake, tetris, sudoku, arcade, retro, clásicos">
+    <title>FreeUniArcade - Juegos Gratis Online | Snake, Pong y Más</title>
+    <meta name="description" content="Juega gratis a juegos clásicos y retro online. Snake, Pong, Sudoku y más. Sin registro, sin pagos. Todo el arte y código originales.">
+    <meta name="keywords" content="juegos gratis, juegos online, snake, pong, sudoku, arcade, retro, clásicos">
     <meta name="author" content="FreeUniTools">
     <meta name="robots" content="index, follow">
     
@@ -100,11 +100,7 @@
                 <div class="game-icon">🐍</div>
                 <h3 class="game-title">Snake</h3>
                 <p class="game-description">El clásico juego de la serpiente. Come la comida y crece sin chocar.</p>
-                <div class="game-tags">
-                    <span class="tag tag-offline">OFFLINE</span>
-                    <span class="tag tag-no-register">SIN REGISTRO</span>
-                </div>
-                <button class="play-button">Jugar</button>
+                <button class="play-button" data-game="snake">Jugar</button>
             </div>
 
             <!-- Game Card 2 -->
@@ -112,23 +108,7 @@
                 <div class="game-icon">🐦</div>
                 <h3 class="game-title">Flappy Bird</h3>
                 <p class="game-description">Vuela entre los tubos sin chocar. Presiona espacio o haz click para volar.</p>
-                <div class="game-tags">
-                    <span class="tag tag-offline">OFFLINE</span>
-                    <span class="tag tag-no-register">SIN REGISTRO</span>
-                </div>
-                <button class="play-button">Jugar</button>
-            </div>
-
-            <!-- Game Card 3 -->
-            <div class="game-card">
-                <div class="game-icon">🧩</div>
-                <h3 class="game-title">Sudoku</h3>
-                <p class="game-description">Completa la cuadrícula con números del 1 al 9 sin repetir.</p>
-                <div class="game-tags">
-                    <span class="tag tag-offline">OFFLINE</span>
-                    <span class="tag tag-no-register">SIN REGISTRO</span>
-                </div>
-                <button class="play-button">Jugar</button>
+                <button class="play-button" data-game="flappy">Jugar</button>
             </div>
         </div>
     </section>
@@ -137,9 +117,12 @@
     <section id="retro" class="games-section">
         <h2 class="section-title">Retro</h2>
         <div class="games-grid">
-            <!-- Los juegos se agregarán aquí -->
-            <div class="empty-state">
-                <p class="empty-message">Próximamente: juegos retro</p>
+            <!-- Game Card 1 -->
+            <div class="game-card">
+                <div class="game-icon">🏓</div>
+                <h3 class="game-title">Pong</h3>
+                <p class="game-description">El clásico juego Pong. Compite contra la máquina y gana al llegar a 10 puntos.</p>
+                <button class="play-button" data-game="pong">Jugar</button>
             </div>
         </div>
     </section>
@@ -224,9 +207,6 @@
         <div class="footer-content">
             <div class="footer-left">
                 <p>Hecho por <span class="footer-brand">FreeUniTools</span></p>
-            </div>
-            <div class="footer-center">
-                <a href="#" class="footer-link">WhatsApp</a>
             </div>
             <div class="footer-right">
                 <button class="donate-button">Donar</button>

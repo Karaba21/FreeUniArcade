@@ -22,6 +22,28 @@
     "title": "Flappy Bird",
     "description": "Vuela entre los tubos sin chocar. Presiona espacio o haz click para volar."
   },
+  "pong": {
+    "title": "Pong",
+    "description": "El clásico juego Pong. Compite contra la máquina y gana al llegar a 10 puntos.",
+    "score": "Puntuación:",
+    "gameOver": "¡Game Over!",
+    "paused": "Pausado",
+    "playAgain": "Jugar de Nuevo",
+    "resume": "Continuar",
+    "controls": "Controles",
+    "desktopControls": "Desktop: Usa las flechas ↑↓ o W/S para mover la paleta",
+    "mobileControls": "Móvil: Toca y arrastra en la pantalla",
+    "pauseControls": "Pausar: Presiona P",
+    "selectDifficulty": "Selecciona la dificultad:",
+    "easy": "Fácil",
+    "medium": "Medio",
+    "hard": "Difícil",
+    "player": "Jugador",
+    "ai": "Máquina",
+    "firstTo10": "Primero en llegar a 10 gana",
+    "youWon": "¡Ganaste!",
+    "youLost": "¡Game Over!"
+  },
   "tetris": {
     "title": "Tetris",
     "description": "Alinea las piezas y completa líneas para ganar puntos."

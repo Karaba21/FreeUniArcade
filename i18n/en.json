@@ -22,6 +22,28 @@
     "title": "Flappy Bird",
     "description": "Fly between the pipes without crashing. Press space or click to fly."
   },
+  "pong": {
+    "title": "Pong",
+    "description": "The classic Pong game. Compete against the machine and win by reaching 10 points.",
+    "score": "Score:",
+    "gameOver": "Game Over!",
+    "paused": "Paused",
+    "playAgain": "Play Again",
+    "resume": "Resume",
+    "controls": "Controls",
+    "desktopControls": "Desktop: Use arrow keys ↑↓ or W/S to move the paddle",
+    "mobileControls": "Mobile: Touch and drag on the screen",
+    "pauseControls": "Pause: Press P",
+    "selectDifficulty": "Select difficulty:",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "player": "Player",
+    "ai": "Machine",
+    "firstTo10": "First to reach 10 wins",
+    "youWon": "You Won!",
+    "youLost": "Game Over!"
+  },
   "tetris": {
     "title": "Tetris",
     "description": "Align the pieces and complete lines to score points."

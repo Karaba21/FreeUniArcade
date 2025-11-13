@@ -91,35 +91,45 @@ async function updateLanguage(lang) {
     });
     
     // Update section titles
-    const sectionTitles = document.querySelectorAll('.section-title');
-    if (sectionTitles.length >= 4) {
-        sectionTitles[0].textContent = t('popularGames');
-        sectionTitles[1].textContent = t('classics');
-        sectionTitles[2].textContent = t('retro');
-        sectionTitles[3].textContent = t('puzzle');
-        // Update donate section title if it exists
-        const donateTitle = document.querySelector('#donate .section-title');
-        if (donateTitle) donateTitle.textContent = t('donateTitle');
-    }
+    const classicsTitle = document.querySelector('#classics .section-title');
+    if (classicsTitle) classicsTitle.textContent = t('classics');
+    
+    const retroTitle = document.querySelector('#retro .section-title');
+    if (retroTitle) retroTitle.textContent = t('retro');
+    
+    const puzzleTitle = document.querySelector('#puzzle .section-title');
+    if (puzzleTitle) puzzleTitle.textContent = t('puzzle');
+    
+    // Update donate section title if it exists
+    const donateTitle = document.querySelector('#donate .section-title');
+    if (donateTitle) donateTitle.textContent = t('donateTitle');
     
     // Update empty states
     const emptyMessages = document.querySelectorAll('.empty-message');
-    if (emptyMessages.length >= 3) {
-        emptyMessages[0].textContent = t('comingSoonClassics');
-        emptyMessages[1].textContent = t('comingSoonRetro');
-        emptyMessages[2].textContent = t('comingSoonPuzzle');
-    }
+    emptyMessages.forEach((msg) => {
+        const section = msg.closest('.games-section');
+        if (section) {
+            const sectionId = section.id;
+            if (sectionId === 'puzzle') {
+                msg.textContent = t('comingSoonPuzzle');
+            } else if (sectionId === 'retro') {
+                msg.textContent = t('comingSoonRetro');
+            } else if (sectionId === 'classics') {
+                msg.textContent = t('comingSoonClassics');
+            }
+        }
+    });
     
     // Update game cards
     const gameCards = document.querySelectorAll('.game-card');
-    const gameKeys = ['snake', 'flappy', 'tetris', 'sudoku'];
     
-    gameCards.forEach((card, index) => {
-        if (index < gameKeys.length) {
-            const gameKey = gameKeys[index];
+    gameCards.forEach((card) => {
+        const playBtn = card.querySelector('.play-button');
+        const gameKey = playBtn ? playBtn.getAttribute('data-game') : null;
+        
+        if (gameKey) {
             const titleEl = card.querySelector('.game-title');
             const descEl = card.querySelector('.game-description');
-            const playBtn = card.querySelector('.play-button');
             
             if (titleEl) titleEl.textContent = t(`${gameKey}.title`);
             if (descEl) descEl.textContent = t(`${gameKey}.description`);
@@ -262,14 +272,15 @@ if (document.readyState === 'loading') {
 // Play button functionality (only on index page)
 const playButtons = document.querySelectorAll('.play-button');
 if (playButtons.length > 0) {
-    playButtons.forEach((button, index) => {
+    playButtons.forEach((button) => {
         button.addEventListener('click', () => {
-            const gameTitles = ['snake', 'flappy', 'tetris', 'sudoku'];
-            const gameTitle = gameTitles[index];
+            const gameTitle = button.getAttribute('data-game');
             if (gameTitle === 'snake') {
                 window.location.href = '/games/snake/';
             } else if (gameTitle === 'flappy') {
                 window.location.href = '/games/flappy/';
+            } else if (gameTitle === 'pong') {
+                window.location.href = '/games/pong/';
             } else {
                 console.log(`Playing ${gameTitle}`);
                 const comingSoonMsg = i18n.isLoaded() 

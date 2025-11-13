@@ -203,9 +203,10 @@ body {
 
 .games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, 350px);
     gap: 2rem;
     margin-top: 3rem;
+    justify-content: center;
 }
 
 /* Game Card */
@@ -216,6 +217,11 @@ body {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--border-color);
+    width: 350px;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .game-card:hover {
@@ -227,6 +233,7 @@ body {
 .game-icon {
     font-size: 4rem;
     margin-bottom: 1rem;
+    flex-shrink: 0;
 }
 
 .game-title {
@@ -234,12 +241,18 @@ body {
     font-weight: bold;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    flex-shrink: 0;
 }
 
 .game-description {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 0.5rem;
 }
 
 .game-tags {
@@ -278,6 +291,8 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-top: auto;
 }
 
 .play-button:hover {
@@ -927,10 +942,14 @@ a:focus-visible {
     .games-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        justify-content: stretch;
     }
 
     .game-card {
         padding: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        min-height: 360px;
     }
 
     .promo-section {
@@ -1005,7 +1024,13 @@ a:focus-visible {
 
 @media (min-width: 769px) {
     .games-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, 350px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .games-grid {
+        grid-template-columns: repeat(auto-fit, 350px);
     }
 }
 

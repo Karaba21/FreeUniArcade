@@ -1,0 +1,433 @@
+/* Pong Game Styles - Desktop First */
+
+/* Game Header - Same as other games */
+.game-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--header-bg, #2a2a2a);
+    border-bottom: 2px solid #14b8a6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.game-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #14b8a6, #06b6d4);
+}
+
+/* Light Theme Game Header */
+body.light-theme .game-header {
+    border-bottom: 2px solid #8b5cf6;
+}
+
+body.light-theme .game-header::before {
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+}
+
+.game-title {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--text-color, #ffffff);
+    flex: 1;
+    text-align: center;
+}
+
+.game-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1rem;
+    color: var(--text-color, #ffffff);
+    font-weight: 600;
+    flex: 1;
+    text-align: center;
+}
+
+.game-high-score {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #b8b8b8);
+    font-weight: 500;
+}
+
+/* Game Container - 3 column layout */
+.game-container {
+    max-width: 100%;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 160px 1fr 160px;
+    gap: 2rem;
+    align-items: start;
+}
+
+.game-main-section {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    justify-self: center;
+}
+
+.game-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+}
+
+.game-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameCanvas {
+    cursor: pointer;
+    border: 2px solid var(--border-color, #2d2d44);
+    border-radius: 8px;
+    background: var(--bg-primary, #0a0a0f);
+    display: block;
+    touch-action: none;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+}
+
+#gameCanvas:hover {
+    opacity: 0.95;
+}
+
+/* Ad Slots */
+.ad-slot-side {
+    min-width: 160px;
+    min-height: 600px;
+    background: var(--card-bg, #2a2a2a);
+    border: 1px solid var(--border-color, #3a3a3a);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary, #cccccc);
+    font-size: 0.9rem;
+    position: sticky;
+    top: 2rem;
+}
+
+.ad-slot-side::before {
+    content: "Ad Slot";
+    opacity: 0.5;
+}
+
+/* Controls Sidebar */
+.game-controls-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    min-width: 250px;
+    max-width: 250px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 2rem;
+}
+
+/* Game Instructions */
+.game-instructions {
+    background: var(--card-bg, #2a2a2a);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color, #3a3a3a);
+    width: 100%;
+    max-width: 100%;
+}
+
+.game-instructions h3 {
+    margin: 0 0 0.75rem 0;
+    color: var(--text-color, #ffffff);
+    font-size: 1.1rem;
+}
+
+.game-instructions p {
+    margin: 0.5rem 0;
+    color: var(--text-secondary, #cccccc);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Game Start Screen */
+.game-start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--modal-bg, rgba(26, 26, 26, 0.95));
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid var(--border-color, #3a3a3a);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.game-start h2 {
+    margin: 0 0 1.5rem 0;
+    color: var(--text-color, #ffffff);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.mode-selector,
+.difficulty-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.mode-btn {
+    background: linear-gradient(135deg, #14b8a6, #06b6d4);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 200px;
+    width: 100%;
+}
+
+.mode-btn:hover,
+.mode-btn:focus {
+    background: linear-gradient(135deg, #0d9488, #06b6d4);
+    transform: scale(1.05);
+    outline: 2px solid #14b8a6;
+    outline-offset: 2px;
+    box-shadow: 0 4px 15px rgba(20, 184, 166, 0.4);
+}
+
+/* Light Theme Mode Buttons */
+body.light-theme .mode-btn {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: white;
+}
+
+body.light-theme .mode-btn:hover,
+body.light-theme .mode-btn:focus {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    outline: 2px solid #8b5cf6;
+}
+
+.mode-btn:active {
+    transform: scale(0.98);
+}
+
+.difficulty-selector h3 {
+    margin: 0;
+    color: var(--text-color, #ffffff);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.difficulty-btn {
+    background: linear-gradient(135deg, #14b8a6, #06b6d4);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 150px;
+    width: 100%;
+}
+
+.difficulty-btn:hover,
+.difficulty-btn:focus {
+    background: linear-gradient(135deg, #0d9488, #06b6d4);
+    transform: scale(1.05);
+    outline: 2px solid #14b8a6;
+    outline-offset: 2px;
+    box-shadow: 0 4px 15px rgba(20, 184, 166, 0.4);
+}
+
+/* Light Theme Difficulty Buttons */
+body.light-theme .difficulty-btn {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: white;
+}
+
+body.light-theme .difficulty-btn:hover,
+body.light-theme .difficulty-btn:focus {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    outline: 2px solid #8b5cf6;
+}
+
+.difficulty-btn:active {
+    transform: scale(0.98);
+}
+
+/* Game Over and Paused modals */
+.game-over,
+.game-paused {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--modal-bg, rgba(26, 26, 26, 0.95));
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid var(--border-color, #3a3a3a);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.game-over h2,
+.game-paused h2 {
+    margin: 0 0 1rem 0;
+    color: var(--text-color, #ffffff);
+    font-size: 1.5rem;
+}
+
+.game-over p {
+    margin: 0.5rem 0 1.5rem 0;
+    color: var(--text-color, #ffffff);
+    font-size: 1.1rem;
+}
+
+.restart-button,
+.resume-button {
+    background: linear-gradient(135deg, #14b8a6, #06b6d4);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.restart-button:hover,
+.restart-button:focus,
+.resume-button:hover,
+.resume-button:focus {
+    background: linear-gradient(135deg, #0d9488, #06b6d4);
+    transform: scale(1.05);
+    outline: 2px solid #14b8a6;
+    outline-offset: 2px;
+    box-shadow: 0 4px 15px rgba(20, 184, 166, 0.4);
+}
+
+/* Light Theme Buttons */
+body.light-theme .restart-button,
+body.light-theme .resume-button {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: white;
+}
+
+body.light-theme .restart-button:hover,
+body.light-theme .restart-button:focus,
+body.light-theme .resume-button:hover,
+body.light-theme .resume-button:focus {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    outline: 2px solid #8b5cf6;
+}
+
+.restart-button:active,
+.resume-button:active {
+    transform: scale(0.98);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 1024px) {
+    .game-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .game-main-section {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .ad-slot-side {
+        display: none;
+    }
+    
+    .game-controls-sidebar {
+        position: static;
+        width: 100%;
+        order: 2;
+        align-items: center;
+    }
+    
+    .game-content {
+        order: 1;
+    }
+    
+    #gameCanvas {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-header {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .game-title,
+    .game-score {
+        flex: none;
+        width: 100%;
+    }
+    
+    .game-container {
+        padding: 1rem;
+    }
+    
+    #gameCanvas {
+        max-width: 100%;
+    }
+    
+    .game-start {
+        padding: 1.5rem;
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .difficulty-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
