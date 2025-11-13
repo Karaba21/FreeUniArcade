@@ -48,6 +48,10 @@
     "title": "Buscaminas",
     "description": "Encuentra todas las minas sin explotar. Click izquierdo para revelar, click derecho para marcar."
   },
+  "wordle": {
+    "title": "Wordle",
+    "description": "Adivina la palabra oculta en 6 intentos. Una palabra nueva cada día."
+  },
   "tetris": {
     "title": "Tetris",
     "description": "Alinea las piezas y completa líneas para ganar puntos."

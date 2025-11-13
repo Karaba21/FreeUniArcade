@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Wordle - La Palabra del Día | FreeUniArcade</title>
+    <meta name="description" content="Juega al clásico juego Wordle gratis online. Adivina la palabra oculta en 6 intentos. Sin registro, sin pagos. Todo el arte y código originales.">
+    <meta name="keywords" content="wordle, palabra del día, juego gratis, puzzle, arcade, retro">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://freeuniarcade.com/games/wordle/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../public/assets/favicon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="game">
+    <meta property="og:url" content="https://freeuniarcade.com/games/wordle/">
+    <meta property="og:title" content="Wordle - La Palabra del Día | FreeUniArcade">
+    <meta property="og:description" content="Juega al clásico juego Wordle gratis online. Sin registro, sin pagos.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://freeuniarcade.com/games/wordle/">
+    <meta property="twitter:title" content="Wordle - La Palabra del Día | FreeUniArcade">
+    <meta property="twitter:description" content="Juega al clásico juego Wordle gratis online. Sin registro, sin pagos.">
+    
+    <!-- Schema.org VideoGame JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Wordle",
+      "description": "Adivina la palabra oculta en 6 intentos. Cada intento debe ser una palabra válida.",
+      "gamePlatform": "Web Browser",
+      "applicationCategory": "Game",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "ratingCount": "1"
+      },
+      "genre": "Puzzle",
+      "playMode": "SinglePlayer",
+      "gameLocation": "https://freeuniarcade.com/games/wordle/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "FreeUniTools"
+      },
+      "datePublished": "2024-01-01",
+      "inLanguage": ["es", "en"]
+    }
+    </script>
+    
+    <!-- Analytics Placeholder (gtag/GTM) -->
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+    <!-- <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
+    
+    <!-- Google Tag Manager -->
+    <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+    
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../styles/game.css">
+    <link rel="stylesheet" href="wordle.css">
+</head>
+<body class="dark-theme">
+    <!-- Google Tag Manager (noscript) -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+    
+    <!-- Ad Slot Top (Placeholder for AdSense) -->
+    <div id="ad-slot-top" style="display: none;"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="../../" class="logo">FreeUniArcade</a>
+            </div>
+            <div class="nav-center">
+                <a href="../../#classics" class="nav-link">Classics</a>
+                <a href="../../#retro" class="nav-link">Retro</a>
+                <a href="../../#puzzle" class="nav-link">Puzzle</a>
+            </div>
+            <div class="nav-right">
+                <button class="lang-selector" id="langSelector">
+                    <span class="icon">🌐</span>
+                    <span class="lang-text">ES</span>
+                </button>
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="icon">🌙</span>
+                    <span class="theme-text">Dark</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Game Header -->
+    <header class="game-header">
+        <h1 class="game-title">La Palabra del Día</h1>
+        <div class="game-score">
+            <span>Intento: <span id="currentAttempt">1</span>/6</span>
+            <span class="game-high-score">¡Una palabra nueva cada día!</span>
+        </div>
+    </header>
+    
+    <!-- Game Container -->
+    <main class="game-container">
+        <!-- Ad Slot Left -->
+        <div id="ad-slot-left" class="ad-slot ad-slot-side"></div>
+        
+        <!-- Game Content with Controls -->
+        <div class="game-main-section">
+            <!-- Game Content -->
+            <div class="game-content">
+                <div class="game-wrapper">
+                    <!-- Language Selection Screen -->
+                    <div id="languageScreen" class="language-screen">
+                        <h2 class="language-title">Selecciona el idioma / Select Language</h2>
+                        <div class="language-options">
+                            <button class="language-button" data-lang="es">
+                                <span class="flag">🇪🇸</span>
+                                <span>Español</span>
+                            </button>
+                            <button class="language-button" data-lang="en">
+                                <span class="flag">🇬🇧</span>
+                                <span>English</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Intro Screen -->
+                    <div id="introScreen" class="intro-screen hidden">
+                        <div class="intro-rules">
+                            <p>Las reglas son simples: adivina la palabra oculta en 6 intentos. Cada intento debe ser una palabra válida y si la palabra no existe el juego te avisará.</p>
+                            <p>Después de cada intento el color de las casillas cambia para mostrar qué tan cerca estás de acertar la palabra</p>
+                        </div>
+                        <div class="intro-legend">
+                            <div class="legend-item">
+                                <div class="legend-tile correct">M</div>
+                                <p>VERDE significa que la letra está en la palabra y en la posición CORRECTA.</p>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-tile present">A</div>
+                                <p>AMARILLO significa que la letra está presente en la palabra pero en la posición INCORRECTA.</p>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-tile absent">R</div>
+                                <p>GRIS significa que la letra NO está presente en la palabra.</p>
+                            </div>
+                        </div>
+                        <div class="intro-footer">
+                            <span class="intro-new-word">¡Una palabra nueva cada día!</span>
+                            <button id="startGameBtn" class="start-button">¡Jugar!</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Game Board -->
+                    <div id="gameBoard" class="wordle-board hidden"></div>
+                    
+                    <!-- Virtual Keyboard -->
+                    <div id="virtualKeyboard" class="virtual-keyboard hidden"></div>
+                    
+                    <!-- Game Over Modal -->
+                    <div id="gameOver" class="game-over hidden">
+                        <h2>¡Game Over!</h2>
+                        <p id="gameOverMessage">Se acabaron los intentos</p>
+                        <p class="word-reveal">La palabra era: <strong id="revealedWord"></strong></p>
+                        <button id="restartGameBtn" class="restart-button">Jugar de Nuevo</button>
+                    </div>
+                    
+                    <!-- Game Win Modal -->
+                    <div id="gameWin" class="game-win hidden">
+                        <h2>¡Ganaste!</h2>
+                        <p id="winMessage">¡Felicidades! Adivinaste la palabra</p>
+                        <p class="word-reveal">La palabra era: <strong id="winWord"></strong></p>
+                        <button id="restartWinBtn" class="restart-button">Jugar de Nuevo</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Controls Sidebar -->
+            <div class="game-controls-sidebar">
+                <!-- Game Instructions -->
+                <div class="game-instructions">
+                    <h3>Controles</h3>
+                    <p><strong>Teclado:</strong> Escribe las letras directamente</p>
+                    <p><strong>Teclado Virtual:</strong> Haz click en las letras</p>
+                    <p><strong>Enter:</strong> Enviar palabra</p>
+                    <p><strong>Backspace:</strong> Borrar letra</p>
+                    <p><strong>Reiniciar:</strong> Nueva palabra cada día</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ad Slot Right -->
+        <div id="ad-slot-right" class="ad-slot ad-slot-side"></div>
+    </main>
+    
+    <!-- Ad Slot Bottom (Placeholder for AdSense) -->
+    <div id="ad-slot-bottom" style="display: none;"></div>
+    
+    <!-- Load scripts -->
+    <script src="../../scripts/storage.js"></script>
+    <script src="../../scripts/i18n.js"></script>
+    <script src="../../script.js"></script>
+    <script src="wordle.js" defer></script>
+</body>
+</html>
+

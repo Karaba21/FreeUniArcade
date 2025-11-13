@@ -283,6 +283,8 @@ if (playButtons.length > 0) {
                 window.location.href = '/games/pong/pong.html';
             } else if (gameTitle === 'minesweeper') {
                 window.location.href = '/games/minesweeper/minesweeper.html';
+            } else if (gameTitle === 'wordle') {
+                window.location.href = '/games/wordle/wordle.html';
             } else {
                 console.log(`Playing ${gameTitle}`);
                 const comingSoonMsg = i18n.isLoaded() 

@@ -48,6 +48,10 @@
     "title": "Minesweeper",
     "description": "Find all mines without exploding. Left click to reveal, right click to flag."
   },
+  "wordle": {
+    "title": "Wordle",
+    "description": "Guess the hidden word in 6 attempts. A new word every day."
+  },
   "tetris": {
     "title": "Tetris",
     "description": "Align the pieces and complete lines to score points."
