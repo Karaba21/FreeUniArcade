@@ -83,22 +83,16 @@ async function updateLanguage(lang) {
 
     // Update nav links
     const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach((link, index) => {
-        if (index === 0) link.textContent = t('classics');
-        else if (index === 1) link.textContent = t('retro');
-        else if (index === 2) link.textContent = t('puzzle');
-        else if (link.classList.contains('nav-donate')) link.textContent = t('donate');
+    navLinks.forEach((link) => {
+        const key = link.getAttribute('data-i18n');
+        if (key) {
+            link.textContent = t(key);
+        }
     });
 
     // Update section titles
-    const classicsTitle = document.querySelector('#classics .section-title');
-    if (classicsTitle) classicsTitle.textContent = t('classics');
-
-    const retroTitle = document.querySelector('#retro .section-title');
-    if (retroTitle) retroTitle.textContent = t('retro');
-
-    const puzzleTitle = document.querySelector('#puzzle .section-title');
-    if (puzzleTitle) puzzleTitle.textContent = t('puzzle');
+    const gamesTitle = document.querySelector('#games .section-title');
+    if (gamesTitle) gamesTitle.textContent = t('navGames');
 
     // Update donate section title if it exists
     const donateTitle = document.querySelector('#donate .section-title');

@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Meta Tags -->
     <title>Buscaminas - Juega Gratis Online | FreeUniArcade</title>
-    <meta name="description" content="Juega al clásico juego Buscaminas gratis online. Encuentra todas las minas sin explotar. Sin registro, sin pagos. Todo el arte y código originales.">
+    <meta name="description"
+        content="Juega al clásico juego Buscaminas gratis online. Encuentra todas las minas sin explotar. Sin registro, sin pagos. Todo el arte y código originales.">
     <meta name="keywords" content="buscaminas, minesweeper, juego gratis, puzzle, arcade, retro">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://freeuniarcade.com/games/minesweeper/">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../../public/assets/favicon.png">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="game">
     <meta property="og:url" content="https://freeuniarcade.com/games/minesweeper/">
     <meta property="og:title" content="Buscaminas - Juega Gratis Online | FreeUniArcade">
     <meta property="og:description" content="Juega al clásico juego Buscaminas gratis online. Sin registro, sin pagos.">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary">
     <meta property="twitter:url" content="https://freeuniarcade.com/games/minesweeper/">
     <meta property="twitter:title" content="Buscaminas - Juega Gratis Online | FreeUniArcade">
-    <meta property="twitter:description" content="Juega al clásico juego Buscaminas gratis online. Sin registro, sin pagos.">
-    
+    <meta property="twitter:description"
+        content="Juega al clásico juego Buscaminas gratis online. Sin registro, sin pagos.">
+
     <!-- Schema.org VideoGame JSON-LD -->
     <script type="application/ld+json">
     {
@@ -59,7 +62,7 @@
       "inLanguage": ["es", "en"]
     }
     </script>
-    
+
     <!-- Analytics Placeholder (gtag/GTM) -->
     <!-- Google tag (gtag.js) -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
@@ -69,26 +72,27 @@
       gtag('js', new Date());
       gtag('config', 'GA_MEASUREMENT_ID');
     </script> -->
-    
+
     <!-- Google Tag Manager -->
     <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
-    
+
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../../styles/game.css">
     <link rel="stylesheet" href="minesweeper.css">
 </head>
+
 <body class="dark-theme">
     <!-- Google Tag Manager (noscript) -->
     <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-    
+
     <!-- Ad Slot Top (Placeholder for AdSense) -->
     <div id="ad-slot-top" style="display: none;"></div>
-    
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -96,9 +100,9 @@
                 <a href="../../" class="logo">FreeUniArcade</a>
             </div>
             <div class="nav-center">
-                <a href="../../#classics" class="nav-link">Classics</a>
-                <a href="../../#retro" class="nav-link">Retro</a>
-                <a href="../../#puzzle" class="nav-link">Puzzle</a>
+                <a href="../../#games" class="nav-link" data-i18n="navGames">Juegos</a>
+                <a href="../../#freeunitools-promo" class="nav-link">FreeUniTools</a>
+                <a href="../../#donate" class="nav-link nav-donate" data-i18n="donate">Donar</a>
             </div>
             <div class="nav-right">
                 <button class="lang-selector" id="langSelector">
@@ -112,7 +116,7 @@
             </div>
         </div>
     </nav>
-    
+
     <!-- Game Header -->
     <header class="game-header">
         <h1 class="game-title">Buscaminas</h1>
@@ -121,12 +125,12 @@
             <span class="game-high-score">Tiempo: <span id="timer">0</span>s</span>
         </div>
     </header>
-    
+
     <!-- Game Container -->
     <main class="game-container">
         <!-- Ad Slot Left -->
         <div id="ad-slot-left" class="ad-slot ad-slot-side"></div>
-        
+
         <!-- Game Content with Controls -->
         <div class="game-main-section">
             <!-- Game Content -->
@@ -149,7 +153,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Controls Sidebar -->
             <div class="game-controls-sidebar">
                 <!-- Game Instructions -->
@@ -162,19 +166,19 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Ad Slot Right -->
         <div id="ad-slot-right" class="ad-slot ad-slot-side"></div>
     </main>
-    
+
     <!-- Ad Slot Bottom (Placeholder for AdSense) -->
     <div id="ad-slot-bottom" style="display: none;"></div>
-    
+
     <!-- Load scripts -->
     <script src="../../scripts/storage.js"></script>
     <script src="../../scripts/i18n.js"></script>
     <script src="../../script.js"></script>
     <script src="minesweeper.js" defer></script>
 </body>
-</html>
 
+</html>
