@@ -44,6 +44,19 @@
     "youWon": "You Won!",
     "youLost": "Game Over!"
   },
+  "breakout": {
+    "title": "Breakout",
+    "description": "Break all the bricks with the ball without letting it fall. An arcade classic.",
+    "score": "Score:",
+    "gameOver": "Game Over!",
+    "paused": "Paused",
+    "playAgain": "Play Again",
+    "resume": "Resume",
+    "controls": "Controls",
+    "desktopControls": "Desktop: Use Left/Right arrow keys or mouse",
+    "mobileControls": "Mobile: Touch sides of screen or swipe",
+    "pauseControls": "Pause: Press Space or P"
+  },
   "minesweeper": {
     "title": "Minesweeper",
     "description": "Find all mines without exploding. Left click to reveal, right click to flag."
@@ -51,6 +64,10 @@
   "wordle": {
     "title": "Wordle",
     "description": "Guess the hidden word in 6 attempts. A new word every day."
+  },
+  "2048": {
+    "title": "2048",
+    "description": "Join the numbers and get to the 2048 tile! Watch out for running out of space."
   },
   "tetris": {
     "title": "Tetris",
@@ -82,4 +99,3 @@
   "comingSoonRetro": "Coming soon: retro games",
   "comingSoonPuzzle": "Coming soon: puzzle games"
 }
-

@@ -44,6 +44,19 @@
     "youWon": "¡Ganaste!",
     "youLost": "¡Game Over!"
   },
+  "breakout": {
+    "title": "Breakout",
+    "description": "Rompe todos los ladrillos con la pelota sin que caiga. Un clásico arcade.",
+    "score": "Puntuación:",
+    "gameOver": "¡Game Over!",
+    "paused": "Pausado",
+    "playAgain": "Jugar de Nuevo",
+    "resume": "Continuar",
+    "controls": "Controles",
+    "desktopControls": "Desktop: Usa las flechas Izquierda/Derecha o el mouse",
+    "mobileControls": "Móvil: Toca los lados de la pantalla o desliza",
+    "pauseControls": "Pausar: Presiona Espacio o P"
+  },
   "minesweeper": {
     "title": "Buscaminas",
     "description": "Encuentra todas las minas sin explotar. Click izquierdo para revelar, click derecho para marcar."
@@ -51,6 +64,10 @@
   "wordle": {
     "title": "Wordle",
     "description": "Adivina la palabra oculta en 6 intentos. Una palabra nueva cada día."
+  },
+  "2048": {
+    "title": "2048",
+    "description": "Une los números iguales para sumar y llegar a 2048. ¡Cuidado con quedarte sin espacio!"
   },
   "tetris": {
     "title": "Tetris",
@@ -82,4 +99,3 @@
   "comingSoonRetro": "Próximamente: juegos retro",
   "comingSoonPuzzle": "Próximamente: juegos de puzzle"
 }
-
